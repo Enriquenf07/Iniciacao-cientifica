@@ -59,7 +59,6 @@ export default function Main() {
 
     useEffect(() => {
         refetch()
-        console.log(url)
     }, [url])
 
     if (isLoading || isFetching) return(
@@ -68,7 +67,7 @@ export default function Main() {
               <h1>Bem vindo</h1> 
               <Form handleStart={handleStart}></Form>
           </div>
-          <div className=' w-screen h-[20rem] flex justify-center items-center'>
+          <div className=' w-[100vw] h-[20rem] flex justify-center items-center'>
               <CircularProgress />
           </div>
       </div>    
