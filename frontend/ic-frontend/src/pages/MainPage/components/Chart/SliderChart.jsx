@@ -5,16 +5,24 @@ import { TextField } from '@mui/material';
 
 
 export default function SliderChart(props) {
+
+  function handleChange(value){
+    props.setValue(value)
+  }
+
+
   return (
-    <div className=' flex justify-between w-screen items-start'>
-      <h1 className='text-2xl'>População</h1>
-      <div className='flex gap-3 pb-5'>
-        <TextField id="outlined-basic" label="Dominio inicial" variant="outlined" onChange={(e) => props.setDi(Number(e.target.value))}/>
-        <TextField id="outlined-basic" label="Dominio final" variant="outlined" onChange={(e) => props.setDf(Number(e.target.value))}/>
-        <TextField id="outlined-basic" label="Imagem inicial" variant="outlined" onChange={(e) => props.setIi(e.target.value)}/>
-        <TextField id="outlined-basic" label="Imagem final" variant="outlined" onChange={(e) => props.setIf(e.target.value)}/>
-      </div>
-      
-    </div>
+    <Slider
+      aria-label="Temperature"
+      defaultValue={props.initialValue}
+      getAriaValueText={handleChange}
+      valueLabelDisplay="auto"
+      step={50}
+      marks
+      min={0}
+      max={props.maxValue}
+      sx={{width: '10vw'}}
+      disabled={!props.bool}
+    />
   );
 }
