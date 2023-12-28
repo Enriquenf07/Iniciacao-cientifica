@@ -1,9 +1,11 @@
-class Bacteria():
-    def __init__(self, pop, r, k, ab, ac, ad, ae):
-        self.pop = pop
-        self.r = r
-        self.k = k
-        self.ab = ab
-        self.ac = ac
-        self.ad = ad
-        self.ae = ae
+from pydantic import BaseModel
+
+
+class Bacteria(BaseModel):
+    pop: float
+    r: float
+    k: float
+    ab: float
+    ac: float
+    ad: float
+    ae: float
